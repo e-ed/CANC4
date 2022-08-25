@@ -1,4 +1,4 @@
-def converterBase10ParaOutraBase(numero):
+def converterBase10ParaOutraBase():
         novoNumero = []
         numeroConvertido = ""
         numero = int(input("Numero na base 10 a ser convertido: "))
@@ -23,11 +23,9 @@ def converterBase10ParaOutraBase(numero):
 
         return resultados
 
-def converterOutraBaseParaBase10(numero):
+def converterOutraBaseParaBase10(numero, base):
         novoNumero = []
         numeroConvertido = 0
-        numero = int(input("Numero a ser convertido: "))
-        base = int(input("Base do numero: "))
 
         for n in str(numero):
             novoNumero.append(n)
@@ -51,13 +49,17 @@ while True:
     print("999) Sair")
     escolha = int(input())
     if escolha == 1:
-        dicionarioResultados = converterBase10ParaOutraBase(escolha)
+        dicionarioResultados = converterBase10ParaOutraBase()
         print(dicionarioResultados.get("numeroOriginal"), end='\N{SUBSCRIPT ONE}\N{SUBSCRIPT ZERO}')
         print(" = "+ str(dicionarioResultados.get("numeroConvertido")) +  " na base "+str(dicionarioResultados.get("base")))
+        print("\n")
     elif escolha == 2:
-        dicionarioResultados = converterOutraBaseParaBase10(escolha)
+        numero = int(input("Numero a ser convertido: "))
+        base = int(input("Base do numero: "))
+        dicionarioResultados = converterOutraBaseParaBase10(numero, base)
         print(str(dicionarioResultados.get("numeroOriginal"))+" na base " + str(dicionarioResultados.get("base")) + " = ", end='')
         print(str(dicionarioResultados.get("numeroConvertido")), end='\N{SUBSCRIPT ONE}\N{SUBSCRIPT ZERO}\n')
+        print("\n")
     elif escolha == 999:
         break
 
