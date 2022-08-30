@@ -1,6 +1,5 @@
 from unittest import result
 
-
 def converterBase10ParaOutraBase(numero, base):
         if numero == 0:
             resultados = {
@@ -88,6 +87,7 @@ while True:
     print("1) Converter da base 10 para outra base")
     print("2) Converter de outra base para a base 10")
     print("3) Adicionar/subtrair em outra base")
+    print("4) Verificar se um numero pode ser representado em uma maquina computacional")
     print("999) Sair")
     escolha = int(input())
     if escolha == 1:
@@ -111,7 +111,12 @@ while True:
         operacao = int(input("0) Somar \n1) Subtrair"))
         dicionarioResultados = operacoesOutraBase(numero1, numero2, base, operacao)
         print(str(dicionarioResultados.get("numero1Original")) + str(dicionarioResultados.get("operacao")) + str(dicionarioResultados.get("numero2Original")) + " = " + str(dicionarioResultados.get("resultado")))
-
+    elif escolha == 4:
+        base = int (input("Base da maquina: "))
+        casasMantissa = int (input("Numero de digitos na mantissa do numero: "))
+        min = int (input("Valor minimo do expoente: "))
+        max = int (input("Valor maximo do expoente: "))
+        check = int (input("Por fim, o numero que voce deseja verificar para esta máquina virtual: "))
     elif escolha == 999:
         break
 
