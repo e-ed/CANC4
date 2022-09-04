@@ -1,5 +1,5 @@
-from unittest import result
-
+# convertendo de da base 10 para outra base
+# utilizando divisoes sucessivas
 def converterBase10ParaOutraBase(numero, base):
         if numero == 0:
             resultados = {
@@ -30,6 +30,9 @@ def converterBase10ParaOutraBase(numero, base):
 
         return resultados
 
+# convertendo de outra base para base 10
+# pegando cada digito e elevando a base de 0 ateh o comprimento do numero
+# ex: 10 em binario eh 2^0 + 2^1 na base 10
 def converterOutraBaseParaBase10(numero, base):
         if numero == 0:
             resultados = {
@@ -57,6 +60,8 @@ def converterOutraBaseParaBase10(numero, base):
 
         return resultados
 
+# para somar e subtrair em outra base, convertemos para a base 10 antes de realizar a operacao
+# e depois convertemos o resultado para a base original
 def operacoesOutraBase(numero1, numero2, base, operacao):
     numero1Convertido = converterOutraBaseParaBase10(numero1, base)
     numero2Convertido = converterOutraBaseParaBase10(numero2, base)
